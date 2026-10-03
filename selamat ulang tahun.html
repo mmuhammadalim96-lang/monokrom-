@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Untuk Pilaa, Sayy ♡</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  -webkit-tap-highlight-color:transparent;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:#090711;
+  color:white;
+  font-family:Arial,sans-serif;
+  overflow-x:hidden;
+}
+
+button{
+  font:inherit;
+}
+
+section{
+  min-height:100svh;
+  padding:35px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.bg{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 40%,#482348 0%,#170d1c 45%,#07060b 100%);
+  z-index:-2;
+}
+
+.stars{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:1;
+}
+
+.star{
+  position:absolute;
+  color:#fff;
+  opacity:.65;
+  animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+  from{opacity:.2}
+  to{opacity:1}
+}
+
+/* INTRO */
+
+#intro h1{
+  font-size:52px;
+  margin:10px 0;
+}
+
+.pink{
+  color:#ff9bd6;
+}
+
+.subtitle{
+  color:#c9bdca;
+  line-height:1.7;
+  max-width:330px;
+}
+
+.main-btn{
+  margin-top:25px;
+  border:1px solid #e99aca;
+  background:#d879ad22;
+  color:#ffd8ed;
+  border-radius:999px;
+  padding:15px 28px;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+
+/* CONTENT */
+
+.title{
+  font-size:43px;
+  margin:10px 0;
+}
+
+.text{
+  max-width:500px;
+  line-height:1.8;
+  color:#c9bdca;
+}
+
+/* GALERI */
+
+.gallery{
+  width:min(700px,100%);
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+  margin-top:25px;
+}
+
+.photo{
+  background:#fff;
+  padding:8px 8px 18px;
+  color:#29202a;
+  transform:rotate(-1deg);
+  box-shadow:0 15px 40px #0008;
+}
+
+.photo:nth-child(even){
+  transform:rotate(1deg);
+}
+
+.photo img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  display:block;
+}
+
+.photo p{
+  margin:10px 4px 0;
+  font-family:cursive;
+}
+
+/* WISH */
+
+#wish{
+  position:relative;
+  overflow:hidden;
+}
+
+#wish h2{
+  font-family:cursive;
+  font-size:44px;
+  margin:10px 0;
+}
+
+.wish-text{
+  color:#c9bdca;
+  max-width:350px;
+  line-height:1.7;
+}
+
+/* CAKE */
+
+.cake{
+  position:relative;
+  width:min(430px,94vw);
+  height:330px;
+  margin-top:100px;
+}
+
+.cake-body{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:220px;
+  border-radius:35px 35px 60px 60px;
+  background:linear-gradient(#ffb8d5,#db679d);
+  box-shadow:
+    inset 0 -25px #b54d80,
+    0 25px 55px #0009;
+}
+
+.cake-top{
+  position:absolute;
+  top:40px;
+  left:2%;
+  width:96%;
+  height:105px;
+  border-radius:50%;
+  background:#ffd4e4;
+  color:#8c4166;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  font-family:cursive;
+  font-size:29px;
+  z-index:5;
+}
+
+.cake-top small{
+  font-size:22px;
+}
+
+/* LILIN */
+
+.candles{
+  position:absolute;
+  top:-105px;
+  left:4%;
+  width:92%;
+  height:150px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  z-index:30;
+}
+
+.candle-button{
+  position:relative;
+  width:58px;
+  height:150px;
+  padding:0;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  touch-action:manipulation;
+  z-index:50;
+}
+
+.candle{
+  position:absolute;
+  bottom:0;
+  left:17px;
+  width:25px;
+  height:90px;
+  border-radius:8px;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #ffe0ec 0 9px,
+      #e79dc0 9px 16px
+    );
+  box-shadow:0 5px 12px #0005;
+}
+
+.flame{
+  position:absolute;
+  left:9px;
+  top:0;
+  width:40px;
+  height:58px;
+  border-radius:50% 50% 50% 50%;
+  background:
+    radial-gradient(
+      circle at 50% 70%,
+      #fff9a8 0 20%,
+      #ffd25b 25% 55%,
+      #ff8648 60% 100%
+    );
+  box-shadow:
+    0 0 25px #ff9d4d,
+    0 0 55px #ffd35b;
+  animation:flicker .4s infinite alternate;
+  pointer-events:none;
+}
+
+@keyframes flicker{
+  from{transform:scale(.9)}
+  to{transform:scale(1.08)}
+}
+
+.candle-button.off .flame{
+  display:none;
+}
+
+.candle-button.off .candle{
+  opacity:.45;
+}
+
+/* TOMBOL WISH */
+
+.wish-btn{
+  margin-top:25px;
+  min-width:240px;
+  padding:15px 24px;
+  border-radius:999px;
+  border:1px solid #f0a1d0;
+  background:#d979ad22;
+  color:#ffd8ed;
+  cursor:pointer;
+  touch-action:manipulation;
+}
+
+#wishMessage{
+  color:#ffd0e8;
+  font-size:21px;
+  margin-top:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:500px){
+
+  #intro h1{
+    font-size:46px;
+  }
+
+  .title{
+    font-size:38px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .cake{
+    width:94vw;
+  }
+
+  .candle-button{
+    width:48px;
+  }
+
+  .candle{
+    left:12px;
+  }
+
+  .flame{
+    left:4px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="stars" id="stars"></div>
+
+<!-- MUSIK -->
+<audio id="music" loop preload="auto">
+  <source src="1.mp3" type="audio/mpeg">
+</audio>
+
+<!-- INTRO -->
+<section id="intro">
+
+  <div style="font-size:50px">♡</div>
+
+  <p class="pink">UNTUK PILAA, SAYY ♡</p>
+
+  <h1>
+    Happy Birthday<br>
+    <span class="pink">Pilaa ♡</span>
+  </h1>
+
+  <p class="subtitle">
+    Ada sedikit kejutan kecil yang aku siapin khusus buat kamu.
+  </p>
+
+  <button class="main-btn" id="start">
+    💗 Buka kejutan
+  </button>
+
+</section>
+
+
+<!-- HERO -->
+<section id="home" class="hidden">
+
+  <p class="pink">HAPPY BIRTHDAY</p>
+
+  <h2 class="title">
+    Untuk kamu, Pilaa ♡
+  </h2>
+
+  <p class="text">
+    Semoga hari ini menjadi salah satu hari yang paling indah
+    buat kamu. Jangan lupa tersenyum dan tetap jadi diri kamu
+    sendiri yaa.
+  </p>
+
+  <button class="main-btn" id="goGallery">
+    📸 Lihat kenangan
+  </button>
+
+</section>
+
+
+<!-- GALERI -->
+<section id="gallerySection" class="hidden">
+
+  <p class="pink">OUR LITTLE MEMORIES</p>
+
+  <h2 class="title">
+    Foto-foto kamu ♡
+  </h2>
+
+  <div class="gallery">
+
+    <div class="photo">
+      <img src="https://i.imgur.com/b4BJp5X.jpeg">  
+      <p>Senyum kamu ♡</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/oMmNgGj.jpeg">  
+      <p>Yang ini juga lucu.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/aSJmlE7.jpeg">  
+      <p>Jangan lupa senyum yaa.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/xuq5uZm.jpeg">
+      <p>Cantik dengan caramu sendiri.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/WfzpCWx.jpeg">
+      <p>One of my favorites.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/2Y1WhgY.jpeg">
+      <p>Foto yang selalu bikin senyum.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/dObDlg0.jpeg">
+      <p>Sayy ♡</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/zAngijs.jpeg">
+      <p>Keep smiling.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/6vwsaSA.jpeg">
+      <p>Beautiful memory.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/YAnSOZF.jpeg">
+      <p>Always special.</p>
+    </div>
+
+    <div class="photo">
+      <img src="https://i.imgur.com/NIK0TdU.jpeg">
+      <p>Happy birthday, Pilaa ♡</p>
+    </div>
+    
+    <div class="photo">
+      <img src="https://i.imgur.com/bLFDT30.jpeg">}
+      <p>heppy birthday, }pilaaa ♡</p>
+    </div>
+    
+  </div>
+
+  <button class="main-btn" id="goWish">
+    🎂 Ada satu hal lagi
+  </button>
+
+</section>
+
+
+<!-- WISH -->
+<section id="wish" class="hidden">
+
+  <p class="pink">MAKE A WISH</p>
+
+  <h2>
+    Pejamkan mata sebentar...
+  </h2>
+
+  <p class="wish-text">
+    Tarik napas, pikirkan satu keinginan yang paling kamu mau.
+  </p>
+
+  <button class="wish-btn" id="showCake">
+    🎂 Tampilkan kue
+  </button>
+
+
+  <!-- CAKE -->
+  <div class="cake hidden" id="cake">
+
+    <div class="cake-body"></div>
+
+    <div class="cake-top">
+      <b>Happy Birthday</b>
+      <small>Sayy ♡</small>
+    </div>
+
+
+    <div class="candles">
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+      <button class="candle-button" type="button">
+        <span class="flame"></span>
+        <span class="candle"></span>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <button class="wish-btn hidden" id="blowAll">
+    💨 Tiup semua lilin
+  </button>
+
+
+  <p id="wishMessage" class="hidden">
+    ✨ Wish sent to the universe ✨
+  </p>
+
+
+  <button class="wish-btn hidden" id="finish">
+    💗 Lanjut
+  </button>
+
+</section>
+
+
+<!-- END -->
+<section id="finishSection" class="hidden">
+
+  <p class="pink">ONE LAST THING...</p>
+
+  <h2 class="title">
+    Happy Birthday, Pilaa ♡
+  </h2>
+
+  <p class="text">
+    Semoga semua hal baik datang ke kamu.
+    Semoga kamu selalu dikelilingi orang-orang yang sayang
+    dan selalu punya alasan untuk tersenyum.
+  </p>
+
+  <p style="font-size:35px;margin-top:30px">
+    ♡
+  </p>
+
+</section>
+
+
+<script>
+
+/* ======================
+   BINTANG
+====================== */
+
+const stars =
+document.getElementById("stars");
+
+for(let i=0;i<50;i++){
+
+  const s=document.createElement("span");
+
+  s.className="star";
+
+  s.textContent=
+    Math.random()>.5 ? "✦" : "·";
+
+  s.style.left=
+    Math.random()*100+"%";
+
+  s.style.top=
+    Math.random()*100+"%";
+
+  s.style.animationDelay=
+    Math.random()*2+"s";
+
+  stars.appendChild(s);
+}
+
+
+/* ======================
+   MUSIK
+====================== */
+
+const music=
+document.getElementById("music");
+
+function startMusic(){
+
+  music.play().catch(function(){
+
+    console.log(
+      "Browser menolak autoplay musik."
+    );
+
+  });
+
+}
+
+
+/* ======================
+   HELPER SCROLL
+====================== */
+
+function show(id){
+
+  const el=
+    document.getElementById(id);
+
+  el.classList.remove("hidden");
+
+  el.scrollIntoView({
+    behavior:"smooth"
+  });
+
+}
+
+
+/* ======================
+   START
+====================== */
+
+document
+.getElementById("start")
+.addEventListener("click",function(){
+
+  startMusic();
+
+  show("home");
+
+});
+
+
+/* ======================
+   GALLERY
+====================== */
+
+document
+.getElementById("goGallery")
+.addEventListener("click",function(){
+
+  show("gallerySection");
+
+});
+
+
+/* ======================
+   WISH
+====================== */
+
+document
+.getElementById("goWish")
+.addEventListener("click",function(){
+
+  show("wish");
+
+});
+
+
+/* ======================
+   TAMPILKAN KUE
+====================== */
+
+const showCake=
+document.getElementById("showCake");
+
+const cake=
+document.getElementById("cake");
+
+const blowAll=
+document.getElementById("blowAll");
+
+showCake.addEventListener(
+  "click",
+  function(e){
+
+    e.preventDefault();
+
+    cake.classList.remove("hidden");
+
+    showCake.classList.add("hidden");
+
+    blowAll.classList.remove("hidden");
+
+  }
+);
+
+
+/* ======================
+   LILIN
+====================== */
+
+const candles=
+document.querySelectorAll(
+  ".candle-button"
+);
+
+candles.forEach(function(candle){
+
+  candle.addEventListener(
+    "pointerdown",
+    function(e){
+
+      e.preventDefault();
+
+      candle.classList.add("off");
+
+      checkCandles();
+
+    },
+    {passive:false}
+  );
+
+});
+
+
+/* ======================
+   TIUP SEMUA
+====================== */
+
+blowAll.addEventListener(
+  "click",
+  function(){
+
+    candles.forEach(
+      function(candle){
+
+        candle.classList.add("off");
+
+      }
+    );
+
+    checkCandles();
+
+  }
+);
+
+
+/* ======================
+   CEK LILIN
+====================== */
+
+function checkCandles(){
+
+  const remaining=
+    document.querySelectorAll(
+      ".candle-button:not(.off)"
+    ).length;
+
+  if(remaining===0){
+
+    blowAll.classList.add("hidden");
+
+    document
+      .getElementById("wishMessage")
+      .classList.remove("hidden");
+
+    document
+      .getElementById("finish")
+      .classList.remove("hidden");
+
+  }
+
+}
+
+
+/* ======================
+   FINISH
+====================== */
+
+document
+.getElementById("finish")
+.addEventListener(
+  "click",
+  function(){
+
+    show("finishSection");
+
+  }
+);
+
+</script>
+
+</body>
+</html>
